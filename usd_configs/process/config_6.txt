@@ -1,0 +1,50 @@
+1     # version
+2048  # buffer size in bytes
+process   # file name
+0     # enable on startup (0/1)
+on:fixedFrequency
+3     # frequency
+1     # mode (0: disabled, 1: synchronous stabilizer, 2: asynchronous)
+stateEstimate.z
+on:recvRoot
+on:recvToken
+on:sendToken
+on:syncTime
+on:abstractorRT
+absRT.cnt
+on:slicerRT
+sliRT.cnt
+on:logRoot
+abs_root.cnt
+on:logToken
+slicer_tk.own_p
+slicer_tk.counter
+slicer_tk.type
+slicer_tk.eval
+slicer_tk.target_p
+slicer_tk.flag
+slicer_tk.target_t
+slicer_tk.cut0
+slicer_tk.cut1
+slicer_tk.cut2
+slicer_tk.cut3
+slicer_tk.cut4
+slicer_tk.cut5
+slicer_tk.depend0
+slicer_tk.depend1
+slicer_tk.depend2
+slicer_tk.depend3
+slicer_tk.depend4
+slicer_tk.depend5
+slicer_tk.ispos0
+slicer_tk.ispos1
+slicer_tk.ispos2
+slicer_tk.ispos3
+slicer_tk.ispos4
+slicer_tk.ispos5
+slicer_tk.reset0
+slicer_tk.reset1
+slicer_tk.reset2
+slicer_tk.reset3
+slicer_tk.reset4
+slicer_tk.reset5

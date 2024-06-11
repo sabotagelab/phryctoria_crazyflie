@@ -1,0 +1,36 @@
+1     # version
+2048  # buffer size in bytes
+3agents   # file name
+0     # enable on startup (0/1)
+on:fixedFrequency
+5     # frequency
+1     # mode (0: disabled, 1: synchronous stabilizer, 2: asynchronous)
+id_1.timestamp2_tx
+id_1.timestamp2_rx
+id_1.pos_z
+skew.with1
+id_2.timestamp2_tx
+id_2.timestamp2_rx
+id_2.pos_z
+skew.with2
+id_3.timestamp2_tx
+id_3.timestamp2_rx
+id_3.pos_z
+skew.with3
+on:recvToken
+token_0.counter
+token_1.counter
+token_2.counter
+on:recvSatcut
+satcut_0.time_tx
+satcut_0.pvc0
+satcut_0.pvc1
+satcut_0.pvc2
+satcut_1.time_tx
+satcut_1.pvc0
+satcut_1.pvc1
+satcut_1.pvc2
+satcut_2.time_tx
+satcut_2.pvc0
+satcut_2.pvc1
+satcut_2.pvc2

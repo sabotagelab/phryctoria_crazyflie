@@ -1,0 +1,3 @@
+obj-y += common_files/
+obj-y += pilot.o
+obj-y += sniffer.o
