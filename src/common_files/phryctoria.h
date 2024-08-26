@@ -41,7 +41,7 @@
 #define RESEND_TOKEN_TIMES      1
 
 #define RESEND_EVENT_TIMEOUT    1000    
-#define RESEND_EVENT_TIMES      1
+#define RESEND_EVENT_TIMES      2
 
 // Message type
 enum {
@@ -117,7 +117,7 @@ typedef struct
 typedef struct {
     uint8_t own_p;            // The agent who owns this token
     enum EType type;
-    bool reset[NUM_AGENTS];
+    // bool reset[NUM_AGENTS];
     Time cut[NUM_AGENTS];
     Time depend[NUM_AGENTS];
     enum EPos ispos[NUM_AGENTS];

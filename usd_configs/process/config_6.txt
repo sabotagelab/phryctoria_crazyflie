@@ -42,9 +42,3 @@ slicer_tk.ispos2
 slicer_tk.ispos3
 slicer_tk.ispos4
 slicer_tk.ispos5
-slicer_tk.reset0
-slicer_tk.reset1
-slicer_tk.reset2
-slicer_tk.reset3
-slicer_tk.reset4
-slicer_tk.reset5

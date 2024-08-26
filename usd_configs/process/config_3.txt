@@ -33,6 +33,3 @@ slicer_tk.depend2
 slicer_tk.ispos0
 slicer_tk.ispos1
 slicer_tk.ispos2
-slicer_tk.reset0
-slicer_tk.reset1
-slicer_tk.reset2

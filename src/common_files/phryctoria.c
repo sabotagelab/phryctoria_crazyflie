@@ -143,10 +143,10 @@ void printToken(void *t) {
     DEBUG_PRINT(", ispos:[");
     for (int i=0; i<NUM_AGENTS; i++)
         DEBUG_PRINT("%s,", print_predicate(tk->ispos[i]));
-    DEBUG_PRINT("], reset:[");
-    for (int i=0; i<NUM_AGENTS; i++)
-        DEBUG_PRINT("%d,", tk->reset[i]);
-    DEBUG_PRINT("]\n");
+    // DEBUG_PRINT("], reset:[");
+    // for (int i=0; i<NUM_AGENTS; i++)
+    //     DEBUG_PRINT("%d,", tk->reset[i]);
+    // DEBUG_PRINT("]\n");
 }
 
 void printCommS(void *s) {
@@ -383,14 +383,16 @@ void addEventToToken(Token *tok, Event ev) {
         tok->type = ev.type;
         if (tok->type == E_LEFT) {
             for (int i=0; i<NUM_AGENTS; i++) {
-                tok->reset[i] = true;
+                // tok->reset[i] = true;
+                tok->cut[i] = 0;
+                tok->depend[i] = 0;
             }
         }
-        else {
-            for (int i=0; i<NUM_AGENTS; i++) {
-                tok->reset[i] = false;
-            }
-        }
+        // else {
+        //     for (int i=0; i<NUM_AGENTS; i++) {
+        //         tok->reset[i] = false;
+        //     }
+        // }
     }
     // if (tok->own_p == my_process) {
     //     tok->type = ev.type;
@@ -405,7 +407,7 @@ void addEventToToken(Token *tok, Event ev) {
     //         tok->reset[i] = true;
     // }
 
-    tok->reset[my_process] = false;
+    // tok->reset[my_process] = false;
     
     tok->cut[my_process] = ev.t;
     tok->ispos[my_process] = ev.ispos;
@@ -487,10 +489,10 @@ void evaluateToken(Token *tok) {
         // E_UNK
         tok->target_p = forbid_id;
 
-        if (tok->reset[forbid_id]) {
-            tok->flag = T_AT;
-            tok->target_t = tok->depend[forbid_id];
-        }
+        // if (tok->reset[forbid_id]) {
+        //     tok->flag = T_AT;
+        //     tok->target_t = tok->depend[forbid_id];
+        // }
     }
     sendToken(*tok);
 }
@@ -516,7 +518,8 @@ void processToken(Token *tok) {
         // DEBUG_PRINT("PROC: Inconsistent cut, target process: %u\n", incon_id);
         tok->target_p = incon_id;
         tok->eval = E_NEG;
-        if (tok->cut[incon_id] == 0 || tok->reset[incon_id]) {
+        // if (tok->cut[incon_id] == 0 || tok->reset[incon_id]) {
+        if (tok->cut[incon_id] == 0) {
             tok->flag = T_AT;
             tok->target_t = tok->depend[incon_id];
         }
