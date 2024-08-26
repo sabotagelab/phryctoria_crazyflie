@@ -34,8 +34,8 @@ The framework to operate a decentralized swarm of Crazyflies is from a [demo](ht
 ## Logging
 - Pilots: Copy files in `usd/configs/process` to the micro SD card for each Crazyflie.
 - Sniffer: Copy files in `usd_configs/sniffer` to the micro SD card.
-- 
-- See [documentation](https://www.bitcraze.io/products/micro-sd-card-deck/) for logging framework.
+- Increase the maximum number of log events to 40 by modifying [this](https://github.com/bitcraze/crazyflie-firmware/blob/ac565120e6ca2858d2e4a73f204775502e2d7233/src/deck/drivers/src/usddeck.c#L94).
+- See [documentation](https://www.bitcraze.io/products/micro-sd-card-deck/) about the logging framework.
 
 ## Change the size of swarm
 Changing the size of swarm requires to modify the code and run the previous steps (building and flashing) again. 
